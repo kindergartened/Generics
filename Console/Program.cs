@@ -4,15 +4,17 @@ namespace Prog
 {
     class Prog
     {
-        void Main()
+        static void Main()
         {
-            List<int> list = new List<int>();
-            list.Add(1);
-            list.Add(3);
-            list.Add(4);
-            list.Add(2);
+            List<char> list  = new List<char>();
+            list.Add('a');
+            list.Add('w');
+            list.Add('c');
+            list.Add('d');
 
-            Generics.Generics.Sort<int>(list);
+            UniversalSortings.QuickSort(list);
+            Console.WriteLine(String.Join(" ",list));
+
         }
     }
 }
