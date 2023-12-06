@@ -1,6 +1,6 @@
 ﻿namespace GenericForm
 {
-    partial class Form1
+    partial class Generics
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,116 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(64, 336);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(340, 146);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(524, 336);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(327, 154);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Generics));
+            comboBox1 = new ComboBox();
+            groupBox1 = new GroupBox();
+            label2 = new Label();
+            label1 = new Label();
+            groupBox2 = new GroupBox();
+            groupBox3 = new GroupBox();
+            radioButton6 = new RadioButton();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton5 = new RadioButton();
+            radioButton3 = new RadioButton();
+            radioButton4 = new RadioButton();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
+            SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(88, 118);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 2;
+            resources.ApplyResources(comboBox1, "comboBox1");
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Name = "comboBox1";
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(98, 303);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(287, 30);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Неотсортированный массив";
+            resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.BackColor = SystemColors.Control;
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(comboBox1);
+            groupBox1.FlatStyle = FlatStyle.Flat;
+            groupBox1.Name = "groupBox1";
+            groupBox1.TabStop = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(556, 303);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(265, 30);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Отсортированный массив";
+            resources.ApplyResources(label2, "label2");
+            label2.BackColor = SystemColors.Control;
+            label2.Name = "label2";
             // 
-            // button1
+            // label1
             // 
-            this.button1.Location = new System.Drawing.Point(275, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 65);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
-            // richTextBox3
+            // groupBox2
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(589, 79);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(307, 196);
-            this.richTextBox3.TabIndex = 7;
-            this.richTextBox3.Text = "";
+            groupBox2.Controls.Add(groupBox3);
+            resources.ApplyResources(groupBox2, "groupBox2");
+            groupBox2.Name = "groupBox2";
+            groupBox2.TabStop = false;
             // 
-            // label3
+            // groupBox3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(691, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 30);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Парсинг";
+            groupBox3.BackColor = SystemColors.Control;
+            groupBox3.Controls.Add(radioButton6);
+            groupBox3.Controls.Add(radioButton1);
+            groupBox3.Controls.Add(radioButton2);
+            groupBox3.Controls.Add(radioButton5);
+            groupBox3.Controls.Add(radioButton3);
+            groupBox3.Controls.Add(radioButton4);
+            groupBox3.Cursor = Cursors.Hand;
+            groupBox3.FlatStyle = FlatStyle.Flat;
+            resources.ApplyResources(groupBox3, "groupBox3");
+            groupBox3.Name = "groupBox3";
+            groupBox3.TabStop = false;
+            groupBox3.UseCompatibleTextRendering = true;
             // 
-            // Form1
+            // radioButton6
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 547);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            resources.ApplyResources(radioButton6, "radioButton6");
+            radioButton6.Name = "radioButton6";
+            radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            resources.ApplyResources(radioButton1, "radioButton1");
+            radioButton1.Name = "radioButton1";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            resources.ApplyResources(radioButton2, "radioButton2");
+            radioButton2.Name = "radioButton2";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            resources.ApplyResources(radioButton5, "radioButton5");
+            radioButton5.Name = "radioButton5";
+            radioButton5.UseVisualStyleBackColor = true;
+            radioButton5.CheckedChanged += radioButton5_CheckedChanged;
+            // 
+            // radioButton3
+            // 
+            resources.ApplyResources(radioButton3, "radioButton3");
+            radioButton3.Name = "radioButton3";
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            resources.ApplyResources(radioButton4, "radioButton4");
+            radioButton4.Name = "radioButton4";
+            radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // Generics
+            // 
+            resources.ApplyResources(this, "$this");
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            Name = "Generics";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private RichTextBox richTextBox1;
-        private RichTextBox richTextBox2;
         private ComboBox comboBox1;
+        private GroupBox groupBox1;
         private Label label1;
         private Label label2;
-        private Button button1;
-        private RichTextBox richTextBox3;
-        private Label label3;
+        private GroupBox groupBox2;
+        private RadioButton radioButton4;
+        private RadioButton radioButton3;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
+        private GroupBox groupBox3;
+        private RadioButton radioButton5;
+        private RadioButton radioButton6;
     }
 }
