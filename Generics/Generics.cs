@@ -7,32 +7,36 @@
         /// </summary>
         /// <typeparam name="T">тип элементов списка</typeparam>
         /// <param name="list">список элементов</param>
-        public static void BubbleSort<T>(this List<T> list) where T : IComparable<T>
+        public static List<T> BubbleSort<T>(this List<T> list) where T : IComparable<T>
         {
-            int n = list.Count;
+            List<T> result = new(list);
+            int n = result.Count;
             for (int i = 0; i < n - 1; i++)
             {
                 for (int j = 0; j < n - i - 1; j++)
                 {
-                    if (list[j].CompareTo(list[j + 1]) > 0)
+                    if (result[j].CompareTo(result[j + 1]) > 0)
                     {
-                        T temp = list[j];
-                        list[j] = list[j + 1];
-                        list[j + 1] = temp;
+                        T temp = result[j];
+                        result[j] = result[j + 1];
+                        result[j + 1] = temp;
                     }
                 }
             }
+            return result;
         }
         /// <summary>
         /// Универсальная быстрая сортировка (Сортировка Хоара)
         /// </summary>
         /// <typeparam name="T">тип элементов списка</typeparam>
         /// <param name="list">список элементов</param>
-        public static void QuickSort<T>(this List<T> list) where T : IComparable<T>
+        public static List<T> QuickSort<T>(this List<T> list) where T : IComparable<T>
         {
+            List<T> result = new(list);
             int left = 0;
-            int right = list.Count - 1;
-            SortArray(list, left, right);
+            int right = result.Count - 1;
+            SortArray(result, left, right);
+            return result;
         }
         /// <summary>
         /// вспомогательный метод для QuickSort
@@ -69,30 +73,34 @@
         /// </summary>
         /// <typeparam name="T">тип элементов списка</typeparam>
         /// <param name="list">список элементов</param>
-        public static void Vstavka<T>(this List<T> list) where T : IComparable<T>
+        public static List<T> Vstavka<T>(this List<T> list) where T : IComparable<T>
         {
-            for (int i = 1; i < list.Count; i++)
+            List<T> result = new(list);
+            for (int i = 1; i < result.Count; i++)
             {
-                T k = list[i];
+                T k = result[i];
                 int j = i - 1;
-                while (j >= 0 && list[j].CompareTo(k) < 0)
+                while (j >= 0 && result[j].CompareTo(k) < 0)
                 {
-                    list[j + 1] = list[j];
+                    result[j + 1] = result[j];
                     j--;
                 }
-                list[j + 1] = k;
+                result[j + 1] = k;
             }
+            return result;
         }
         /// <summary>
         /// Сортировка слиянием
         /// </summary>
         /// <typeparam name="T">тип элементов списка</typeparam>
         /// <param name="list">список элементов</param>
-        public static void Sliyaniesort<T>(this List<T> list) where T : IComparable<T>
+        public static List<T> Sliyaniesort<T>(this List<T> list) where T : IComparable<T>
         {
+            List<T> result = new(list);
             int left = 0;
-            int right = list.Count - 1;
-            Mergesort(list, left, right);
+            int right = result.Count - 1;
+            Mergesort(result, left, right);
+            return result;
         }
         /// <summary>
         /// вспомогательный метод для сортировки слиянием

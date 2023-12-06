@@ -29,39 +29,67 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Generics));
-            comboBox1 = new ComboBox();
+            listType = new ComboBox();
             groupBox1 = new GroupBox();
+            Nqwe = new Label();
+            N = new TextBox();
+            generate = new Button();
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
             groupBox3 = new GroupBox();
-            radioButton6 = new RadioButton();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton5 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
+            isMerge = new RadioButton();
+            isQuick = new RadioButton();
+            isPartition = new RadioButton();
+            isBubble = new RadioButton();
+            first = new RichTextBox();
+            result = new RichTextBox();
+            qweqweqwe = new Label();
+            resultqweqwe = new Label();
+            sort = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             SuspendLayout();
             // 
-            // comboBox1
+            // listType
             // 
-            resources.ApplyResources(comboBox1, "comboBox1");
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Name = "comboBox1";
+            resources.ApplyResources(listType, "listType");
+            listType.FormattingEnabled = true;
+            listType.Items.AddRange(new object[] { resources.GetString("listType.Items"), resources.GetString("listType.Items1"), resources.GetString("listType.Items2"), resources.GetString("listType.Items3"), resources.GetString("listType.Items4"), resources.GetString("listType.Items5") });
+            listType.Name = "listType";
             // 
             // groupBox1
             // 
             resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.BackColor = SystemColors.Control;
+            groupBox1.Controls.Add(Nqwe);
+            groupBox1.Controls.Add(N);
+            groupBox1.Controls.Add(generate);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(listType);
             groupBox1.FlatStyle = FlatStyle.Flat;
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
+            // 
+            // Nqwe
+            // 
+            resources.ApplyResources(Nqwe, "Nqwe");
+            Nqwe.BackColor = SystemColors.Control;
+            Nqwe.Name = "Nqwe";
+            // 
+            // N
+            // 
+            resources.ApplyResources(N, "N");
+            N.Name = "N";
+            // 
+            // generate
+            // 
+            resources.ApplyResources(generate, "generate");
+            generate.Name = "generate";
+            generate.UseVisualStyleBackColor = true;
+            generate.Click += generate_Click;
             // 
             // label2
             // 
@@ -84,12 +112,10 @@
             // groupBox3
             // 
             groupBox3.BackColor = SystemColors.Control;
-            groupBox3.Controls.Add(radioButton6);
-            groupBox3.Controls.Add(radioButton1);
-            groupBox3.Controls.Add(radioButton2);
-            groupBox3.Controls.Add(radioButton5);
-            groupBox3.Controls.Add(radioButton3);
-            groupBox3.Controls.Add(radioButton4);
+            groupBox3.Controls.Add(isMerge);
+            groupBox3.Controls.Add(isQuick);
+            groupBox3.Controls.Add(isPartition);
+            groupBox3.Controls.Add(isBubble);
             groupBox3.Cursor = Cursors.Hand;
             groupBox3.FlatStyle = FlatStyle.Flat;
             resources.ApplyResources(groupBox3, "groupBox3");
@@ -97,47 +123,68 @@
             groupBox3.TabStop = false;
             groupBox3.UseCompatibleTextRendering = true;
             // 
-            // radioButton6
+            // isMerge
             // 
-            resources.ApplyResources(radioButton6, "radioButton6");
-            radioButton6.Name = "radioButton6";
-            radioButton6.UseVisualStyleBackColor = true;
+            resources.ApplyResources(isMerge, "isMerge");
+            isMerge.Name = "isMerge";
+            isMerge.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // isQuick
             // 
-            resources.ApplyResources(radioButton1, "radioButton1");
-            radioButton1.Name = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(isQuick, "isQuick");
+            isQuick.Checked = true;
+            isQuick.Name = "isQuick";
+            isQuick.TabStop = true;
+            isQuick.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // isPartition
             // 
-            resources.ApplyResources(radioButton2, "radioButton2");
-            radioButton2.Name = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(isPartition, "isPartition");
+            isPartition.Name = "isPartition";
+            isPartition.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // isBubble
             // 
-            resources.ApplyResources(radioButton5, "radioButton5");
-            radioButton5.Name = "radioButton5";
-            radioButton5.UseVisualStyleBackColor = true;
-            radioButton5.CheckedChanged += radioButton5_CheckedChanged;
+            resources.ApplyResources(isBubble, "isBubble");
+            isBubble.Name = "isBubble";
+            isBubble.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // first
             // 
-            resources.ApplyResources(radioButton3, "radioButton3");
-            radioButton3.Name = "radioButton3";
-            radioButton3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(first, "first");
+            first.Name = "first";
             // 
-            // radioButton4
+            // result
             // 
-            resources.ApplyResources(radioButton4, "radioButton4");
-            radioButton4.Name = "radioButton4";
-            radioButton4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(result, "result");
+            result.Name = "result";
+            // 
+            // qweqweqwe
+            // 
+            resources.ApplyResources(qweqweqwe, "qweqweqwe");
+            qweqweqwe.Name = "qweqweqwe";
+            // 
+            // resultqweqwe
+            // 
+            resources.ApplyResources(resultqweqwe, "resultqweqwe");
+            resultqweqwe.Name = "resultqweqwe";
+            // 
+            // sort
+            // 
+            resources.ApplyResources(sort, "sort");
+            sort.Name = "sort";
+            sort.UseVisualStyleBackColor = true;
+            sort.Click += sort_Click;
             // 
             // Generics
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(sort);
+            Controls.Add(resultqweqwe);
+            Controls.Add(qweqweqwe);
+            Controls.Add(result);
+            Controls.Add(first);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -149,21 +196,28 @@
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private ComboBox comboBox1;
+        private ComboBox listType;
         private GroupBox groupBox1;
         private Label label1;
         private Label label2;
         private GroupBox groupBox2;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton isBubble;
+        private RadioButton isPartition;
+        private RadioButton isQuick;
         private GroupBox groupBox3;
-        private RadioButton radioButton5;
-        private RadioButton radioButton6;
+        private RichTextBox first;
+        private RichTextBox result;
+        private Button generate;
+        private Label qweqweqwe;
+        private Label resultqweqwe;
+        private Label Nqwe;
+        private TextBox N;
+        private RadioButton isMerge;
+        private Button sort;
     }
 }
