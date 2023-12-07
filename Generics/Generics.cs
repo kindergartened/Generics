@@ -80,7 +80,7 @@
             {
                 T k = result[i];
                 int j = i - 1;
-                while (j >= 0 && result[j].CompareTo(k) < 0)
+                while (j >= 0 && result[j].CompareTo(k) > 0)
                 {
                     result[j + 1] = result[j];
                     j--;
