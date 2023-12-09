@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-enum LightType
+public enum LightType
 {
     Bulb,
     Strip,
@@ -16,7 +16,7 @@ enum LightType
 
 namespace Generics
 {
-    abstract class Lights : IComparable<Lights>
+    public abstract class Lights : IComparable<Lights>
     {
         string brandName;
         LightType type;
@@ -28,6 +28,10 @@ namespace Generics
             this.type = type;
             this.price = price;
         }
+
+        public int Price { get => price; set => price = value; }
+        public LightType Type { get => type; set => type = value; }
+        public string BrandName { get => brandName; set => brandName = value; }
 
         public static Lights Generate()
         {
@@ -59,6 +63,11 @@ namespace Generics
         public int CompareTo(Lights? other)
         {
             return price.CompareTo(other?.price);
+        }
+
+        public override string ToString()
+        {
+            return $"{'{'}\t \n \t \t Бренд: {brandName},\n \t \t Тип: {type},\n \t \t Цена: {price} \n \t{'}'}";
         }
     }
 

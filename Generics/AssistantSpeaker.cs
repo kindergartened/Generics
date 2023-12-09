@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    abstract class AssistantSpeaker : IComparable<AssistantSpeaker>
+    public abstract class AssistantSpeaker : IComparable<AssistantSpeaker>
     {
         string brandName;
         int volume;
@@ -18,6 +18,10 @@ namespace Generics
             this.volume = volume;
             this.price = price;
         }
+
+        public int Price { get => price; set => price = value; }
+        public int Volume { get => volume; set => volume = value; }
+        public string BrandName { get => brandName; set => brandName = value; }
 
         public static AssistantSpeaker Generate()
         {
@@ -34,6 +38,11 @@ namespace Generics
         public int CompareTo(AssistantSpeaker? other)
         {
             return price.CompareTo(other?.price);
+        }
+
+        public override string ToString()
+        {
+            return $"{'{'}\t \n \t \t Бренд: {brandName}, \n \t \t Громкость: {volume},\n \t \t Цена: {price} \n \t{'}'}";
         }
     }
 

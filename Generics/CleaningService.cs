@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-enum CleaningType
+public enum CleaningType
 {
     VacuumCleaner,
     Fan,
@@ -14,18 +14,22 @@ enum CleaningType
 
 namespace Generics
 {
-    abstract class CleaningService : IComparable<CleaningService>
+    public abstract class CleaningService : IComparable<CleaningService>
     {
         string brandName;
         CleaningType type;
         int price;
 
-        protected CleaningService(CleaningType type, int price, string brandName)
+        public CleaningService(CleaningType type, int price, string brandName)
         {
             this.brandName = brandName;
             this.type = type;
             this.price = price;
         }
+
+        public string BrandName { get => brandName; set => brandName = value; }
+        public CleaningType Type { get => type; set => type = value; }
+        public int Price { get => price; set => price = value; }
 
         public static CleaningService Generate()
         {
@@ -57,6 +61,11 @@ namespace Generics
         public int CompareTo(CleaningService? other)
         {
             return price.CompareTo(other?.price);
+        }
+
+        public override string ToString()
+        {
+            return $"{'{'}\t \n \t \t Бренд:  {brandName} ,\n \t \t Тип:  {type} ,\n \t \t Цена:  {price}  \n \t{'}'}";
         }
     }
 

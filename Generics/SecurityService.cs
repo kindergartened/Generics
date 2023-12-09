@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-enum SecurityType
+public enum SecurityType
 {
     DoorLock,
     Camera,
@@ -13,7 +13,7 @@ enum SecurityType
 
 namespace Generics
 {
-    abstract class SecurityService : IComparable<SecurityService>
+    public abstract class SecurityService : IComparable<SecurityService>
     {
         string brandName;
         SecurityType type;
@@ -25,6 +25,10 @@ namespace Generics
             this.type = type;
             this.price = price;
         }
+
+        public string BrandName { get => brandName; set => brandName = value; }
+        public SecurityType Type { get => type; set => type = value; }
+        public int Price { get => price; set => price = value; }
 
         public static SecurityService Generate()
         {
@@ -52,6 +56,11 @@ namespace Generics
         public int CompareTo(SecurityService? other)
         {
             return price.CompareTo(other?.price);
+        }
+
+        public override string ToString()
+        {
+            return $"{'{'}\t \n \t \t Бренд: {brandName},\n \t \t Тип: {type},\n \t \t Цена: {price} \n \t{'}'}";
         }
     }
 

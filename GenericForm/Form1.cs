@@ -44,6 +44,13 @@ namespace GenericForm
                             list.Add(Student.Generate());
                         }
                         break;
+                    case "Умный дом":
+                        list = new List<SmartHome<AssistantSpeaker, Lights, CleaningService, SecurityService>>();
+                        for (int i = 0; i < n; i++)
+                        {
+                            list.Add(SmartHome<AssistantSpeaker, Lights, CleaningService, SecurityService>.Generate());
+                        }
+                        break;
                     case "bool":
                         list = new List<bool>();
                         for (int i = 0; i < n; i++)
@@ -120,7 +127,7 @@ namespace GenericForm
             N.BackColor = Color.White; generate.BackColor = Color.FromArgb(41, 98, 255); sort.BackColor = Color.FromArgb(41, 98, 255);
             button1.BackColor = Color.FromArgb(220, 220, 220); button3.BackColor = Color.FromArgb(220, 220, 220);
             //FONT COLORS
-            label1.ForeColor = Color.Black; qweqweqwe.ForeColor = Color.Black; resultqweqwe.ForeColor = Color.Black; groupBox1.ForeColor = Color.Black; 
+            label1.ForeColor = Color.Black; qweqweqwe.ForeColor = Color.Black; resultqweqwe.ForeColor = Color.Black; groupBox1.ForeColor = Color.Black;
             groupBox2.ForeColor = Color.Black; result.ForeColor = Color.Black; first.ForeColor = Color.Black; listType.ForeColor = Color.Black;
             N.ForeColor = Color.Black;
             //STYLES (FLAT & BORDER)
@@ -141,13 +148,13 @@ namespace GenericForm
             listType.ForeColor = Color.White; N.ForeColor = Color.White;
             //STYLES (FLAT & BORDER)
             first.BorderStyle = BorderStyle.None; result.BorderStyle = BorderStyle.None;
-            generate.FlatStyle = FlatStyle.Flat; sort.FlatStyle = FlatStyle.Flat; 
+            generate.FlatStyle = FlatStyle.Flat; sort.FlatStyle = FlatStyle.Flat;
             button1.FlatStyle = FlatStyle.Flat; button3.FlatStyle = FlatStyle.Flat;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            LightTheme(); button3.BackColor= Color.FromArgb(173, 213, 247);
+            LightTheme(); button3.BackColor = Color.FromArgb(173, 213, 247);
         }
 
         private void button1_Click(object sender, EventArgs e)

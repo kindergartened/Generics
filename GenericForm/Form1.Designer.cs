@@ -60,7 +60,7 @@
             resources.ApplyResources(listType, "listType");
             listType.ForeColor = Color.White;
             listType.FormattingEnabled = true;
-            listType.Items.AddRange(new object[] { resources.GetString("listType.Items"), resources.GetString("listType.Items1"), resources.GetString("listType.Items2"), resources.GetString("listType.Items3"), resources.GetString("listType.Items4"), resources.GetString("listType.Items5") });
+            listType.Items.AddRange(new object[] { resources.GetString("listType.Items"), resources.GetString("listType.Items1"), resources.GetString("listType.Items2"), resources.GetString("listType.Items3"), resources.GetString("listType.Items4"), resources.GetString("listType.Items5"), resources.GetString("listType.Items6") });
             listType.Name = "listType";
             // 
             // groupBox1
