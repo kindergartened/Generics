@@ -36,7 +36,7 @@ namespace Generics
                 totalSum += securityCast.Price;
         }
 
-        protected int TotalSum { get => totalSum; set => totalSum = value; }
+        public int TotalSum { get => totalSum; set => totalSum = value; }
 
         public static SmartHome<
             AssistantSpeaker,

@@ -76,5 +76,20 @@ namespace Tests
             List<string> subjs2 = list2.Select(p => p.Grade).ToList();
             CollectionAssert.AreEqual(subjs, subjs2);
         }
+        [TestMethod]
+        public void TestSmartHome()
+        {
+            List<SmartHome<AssistantSpeaker, Lights, CleaningService, SecurityService>> list = new();
+            for (int i = 0; i < 1000; i++)
+            {
+                list.Add(SmartHome<AssistantSpeaker, Lights, CleaningService, SecurityService>.Generate());
+            }
+            List<SmartHome<AssistantSpeaker, Lights, CleaningService, SecurityService>> list2 = new(list);
+            list2 = list2.OrderBy(p => p.TotalSum).ToList();
+            list = UniversalSortings.QuickSort(list);
+            List<int> subjs = list.Select(p => p.TotalSum).ToList();
+            List<int> subjs2 = list2.Select(p => p.TotalSum).ToList();
+            CollectionAssert.AreEqual(subjs, subjs2);
+        }
     }
 }
