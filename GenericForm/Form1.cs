@@ -91,12 +91,39 @@ namespace GenericForm
 
         }
 
+        
+
         private void sort_Click(object sender, EventArgs e)
         {
             try
             {
                 if (isQuick.Checked)
                 {
+                    List<SmartHome<AssistantSpeaker, Lights, CleaningService, SecurityService>>? listCast =
+                        list as List<SmartHome<AssistantSpeaker, Lights, CleaningService, SecurityService>>;
+                    if (listCast != null)
+                    {
+                        UniversalSortings.QuickSort(listCast, (a, b) => a.TotalSum.CompareTo(b.TotalSum));
+                        result.Text = string.Join("\n", listCast);
+                        return;
+                    }
+                    List<Student>? listCastPer =
+                        list as List<Student>;
+                    if (listCastPer != null)
+                    {
+                        UniversalSortings.QuickSort(listCastPer, (a, b) => a.Grade.CompareTo(b.Grade));
+                        result.Text = string.Join("\n", listCastPer);
+                        return;
+                    }
+                    List<Teacher>? listCastTea =
+                        list as List<Teacher>;
+                    if (listCastTea != null)
+                    {
+                        UniversalSortings.QuickSort(listCastTea, (a, b) => a.Subject.CompareTo(b.Subject));
+                        result.Text = string.Join("\n", listCastTea);
+                        return;
+                    }
+
                     result.Text = string.Join("\n", UniversalSortings.QuickSort(list));
                 }
                 if (isPartition.Checked)
