@@ -2,6 +2,95 @@
 {
     public static class UniversalSortings
     {
+
+
+
+        /// <summary>
+        /// шаблон нашего компаратора
+        /// </summary>
+        /// <typeparam name="T"> тип нашего списка </typeparam>
+        /// <param name="a"> первый элемент для сравнения </param>
+        /// <param name="b"> второй элемент для сравнение </param>
+        /// <returns> 
+        /// если a = b возращает 0
+        /// если a > b возращает 1
+        /// если a < b возращает -1
+        /// </returns>
+        public delegate int Comp<T>(T a, T b);
+
+
+
+        /// <summary>
+        /// Быстрая сортировка, со своим условием
+        /// </summary>
+        /// <typeparam name="T"> тип данных нашего списка </typeparam>
+        /// <param name="mas"> список которой, будем сортировать </param>
+        /// <param name="func"> функция с помощью которой мы будем сравнивать элементы списка типа Comp<T> </param>
+        public static void QuickSort<T>(List<T> mas, Comp<T> func){
+            if(mas.Count == 0){
+                return;
+            }
+            quickRec(mas, 0, mas.Count - 1, func);
+        }
+
+
+
+
+        /// <summary>
+        /// рекурсивная функция быстрой сортировки
+        /// </summary>
+        /// <typeparam name="T"> тип элемента данного списка </typeparam>
+        /// <param name="mas">  список которой, будем сортировать </param>
+        /// <param name="start"> с какого элемента начинаем алгоритм </param>
+        /// <param name="end"> до какого элемента начинаем алгоритм </param>
+        /// <param name="func"> функция с помощью которой мы будем сравнивать элементы списка </param>
+        private static void quickRec<T>(List<T> mas, int start, int end, Comp<T> func){
+            if(start < end){
+                int mid = partition(mas, start, end, func);
+                quickRec( mas, start, mid-1, func);
+                quickRec(mas, mid+1, end, func);
+            }
+        }
+
+
+
+
+        /// <summary>
+        /// вспомогательная функция разделение
+        /// </summary>
+        /// <typeparam name="T"> тип элемента данного списка </typeparam>
+        /// <param name="mas"> массив которой, будем сортировать </param>
+        /// <param name="start"> с какого элемента начинаем алгоритм </param>
+        /// <param name="end"> до какого элемента начинаем алгоритм </param>
+        /// <param name="func"> функция с помощью которой мы будем сравнивать элементы списка </param>
+        /// <returns> возращает местополежение опорного элемента после выполнение алгоритма </returns>
+        private static int partition<T>(List<T> mas , int start, int end, Comp<T> func){
+            T mid = mas[start];
+            int i = start+1;
+            int j = end;
+            while(i <= j){
+                while(i <= end && func(mas[i], mid) < 0){
+                    i++;
+                }
+                while(j > start && func(mas[j], mid) > 0){
+                    j--;
+                }
+                if(i >= j){
+                    break;
+                }
+                T x = mas[i];
+                mas[i] = mas[j];
+                mas[j] = x;
+                i++;
+                j--;
+            }
+            T X = mas[start];
+            mas[start] = mas[j];
+            mas[j] = X;
+            return j;
+        }
+
+
         /// <summary>
         /// Пузырьковая сортировка
         /// </summary>
